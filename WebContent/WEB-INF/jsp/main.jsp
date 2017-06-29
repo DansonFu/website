@@ -28,86 +28,112 @@
 	<script src="<%=basePath%>js/jquery.min.js"></script>
 	<!-- Bootstrap -->
 	<script src="<%=basePath%>js/bootstrap.min.js"></script>
-	<!-- mycss -->
-	<link rel="stylesheet" href="<%=basePath%>css/styles.css">
+	
+<link rel="stylesheet" href="<%=basePath%>css/style.default.css" type="text/css" />
+<script type="text/javascript" src="<%=basePath%>js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/custom/general.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/custom/tables.js"></script>
+<link rel="stylesheet" href="<%=basePath%>fonts/roboto.css">
 </head>
 
 <body>
-		<div class="form-div">
-			<form action="">
-			<!-- search begin-->
-			<div class="row">
-			  <div class="col-lg-2">
-			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Search for...">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button">Go!</button>
-			      </span>
-			    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-			</div><!-- /.row -->
-			<!-- search end-->
-				<!-- Table begin-->
-			  <table class="table table-bordered table-hover table-striped">
-			   		<thead>
-			   			<tr>
-			   				<th>1</th>
-			   				<th>2</th>
-			   				<th>3</th>
-			   				<th>4</th>
-			   			</tr>
-			   		</thead>
-			   		<tbody>
-			   			<tr>
-			   				<th>1</th>
-			   				<td>123</td>
-			   				<td>123</td>
-			   				<td>123</td>
-			   			</tr>
-			   			<tr>
-			   				<th>1</th>
-			   				<td>123</td>
-			   				<td>123</td>
-			   				<td>123</td>
-			   			</tr>
-			   			<tr>
-			   				<th>1</th>
-			   				<td>123</td>
-			   				<td>123</td>
-			   				<td>123</td>
-			   			</tr>
-			   			<tr>
-			   				<th>1</th>
-			   				<td>123</td>
-			   				<td>123</td>
-			   				<td>123</td>
-			   			</tr>
-			   		</tbody>
-			  </table>
-			  <!-- Table end-->
-			  <!-- 分页开始 -->
-					  <nav aria-label="Page navigation">
-					  <ul class="pagination">
-					    <li>
-					      <a href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li><a href="#">1</a></li>
-					    <li><a href="#">2</a></li>
-					    <li><a href="#">3</a></li>
-					    <li><a href="#">4</a></li>
-					    <li><a href="#">5</a></li>
-					    <li>
-					      <a href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-					</nav>
-					<!-- 分页结束 -->
-			</form>
-		</div>
+		 <div class="contenttitle2">
+                	<h3>Table with Action</h3>
+                </div><!--contenttitle-->
+                <div class="tableoptions">
+                	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
+                    <select class="radius3">
+                    	<option value="">Show All</option>
+                        <option value="">Rendering Engine</option>
+                        <option value="">Platform</option>
+                    </select> &nbsp;
+                    <label></label>
+                     <span class="field"><input type="text" name="input1" class="smallinput" placeholder="search for..."/></span><button type="submit" class="radius3">查询</button>
+                </div><!--tableoptions-->	
+                <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb table-striped table-hover">
+                    <colgroup>
+                        <col class="con0" style="width: 4%" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
+                            <th class="head1">Rendering engine</th>
+                            <th class="head0">Browser</th>
+                            <th class="head1">Platform(s)</th>
+                            <th class="head0">Engine version</th>
+                            <th class="head1">CSS grade</th>
+                            <th class="head0">Options</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
+                            <th class="head1">Rendering engine</th>
+                            <th class="head0">Browser</th>
+                            <th class="head1">Platform(s)</th>
+                            <th class="head0">Engine version</th>
+                            <th class="head1">CSS grade</th>
+                            <th class="head0">&nbsp;</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                        	<td align="center"><input type="checkbox" /></td>
+                            <td>Trident</td>
+                            <td>Internet Explorer 4.0</td>
+                            <td>Win 95+</td>
+                            <td class="center">4</td>
+                            <td class="center">X</td>
+                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                        	<td align="center"><input type="checkbox" /></td>
+                            <td>Trident</td>
+                            <td>Internet Explorer 5.0</td>
+                            <td>Win 95+</td>
+                            <td class="center">5</td>
+                            <td class="center">C</td>
+                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                        	<td align="center"><input type="checkbox" /></td>
+                            <td>Trident</td>
+                            <td>Internet  Explorer 5.5</td>
+                            <td>Win 95+</td>
+                            <td class="center">5.5</td>
+                            <td class="center">A</td>
+                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                        	<td align="center"><input type="checkbox" /></td>
+                            <td>Trident</td>
+                            <td>Internet Explorer 6</td>
+                            <td>Win 98+</td>
+                            <td class="center">6</td>
+                            <td class="center">A</td>
+                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                        	<td align="center"><input type="checkbox" /></td>
+                            <td>Trident</td>
+                            <td>Internet Explorer 7</td>
+                            <td>Win XP SP2+</td>
+                            <td class="center">7</td>
+                            <td class="center">A</td>
+                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
 </body>
 </html>
 

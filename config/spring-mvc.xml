@@ -51,7 +51,7 @@
    <!--  <mvc:resources mapping="/assets/**" location="assets/"/>
     <mvc:resources mapping="/codefans.net/**" location="codefans.net/"/> -->
     <mvc:resources mapping="/css/**" location="static/css/"/>
-   <!--  <mvc:resources mapping="/fonts/**" location="codefans.net/"/> -->
+    <mvc:resources mapping="/fonts/**" location="static/fonts/"/>
     <mvc:resources mapping="/images/**" location="static/images/"/>
     <mvc:resources mapping="/js/**" location="static/js/"/>
     <!-- <mvc:resources mapping="/Menu/**" location="Menu/"/>
