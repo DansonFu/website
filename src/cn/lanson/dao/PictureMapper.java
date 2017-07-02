@@ -5,7 +5,9 @@ import java.util.List;
 import cn.lanson.pojo.Picture;
 
 public interface PictureMapper {
-    int deleteByPrimaryKey(Integer id);
+   
+
+	int deleteByPrimaryKey(Integer id);
 
     int insert(Picture record);
 

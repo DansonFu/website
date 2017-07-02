@@ -5,41 +5,72 @@ import java.util.Date;
 public class Picture {
     private Integer id;
 
-    private String qiniukey;
+	private String name;
 
-    private Date createtime;
+	private String qiniukey;
 
-    private Date updatetime;
+	private String picurl;
 
-    public Integer getId() {
-        return id;
-    }
+	private String status;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private Date createtime;
 
-    public String getQiniukey() {
-        return qiniukey;
-    }
+	private Date updatetime;
 
-    public void setQiniukey(String qiniukey) {
-        this.qiniukey = qiniukey == null ? null : qiniukey.trim();
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Date getCreatetime() {
-        return createtime;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public Date getUpdatetime() {
-        return updatetime;
-    }
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
-    }
+	public String getQiniukey() {
+		return qiniukey;
+	}
+
+	public void setQiniukey(String qiniukey) {
+		this.qiniukey = qiniukey == null ? null : qiniukey.trim();
+	}
+
+	public String getPicurl() {
+		return picurl;
+	}
+
+	public void setPicurl(String picurl) {
+		this.picurl = picurl == null ? null : picurl.trim();
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status == null ? null : status.trim();
+	}
+
+	public Date getCreatetime() {
+		return createtime;
+	}
+
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
+	}
+
+	public Date getUpdatetime() {
+		return updatetime;
+	}
+
+	public void setUpdatetime(Date updatetime) {
+		this.updatetime = updatetime;
+	}
+
 }
