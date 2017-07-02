@@ -30,13 +30,7 @@
 	<script src="<%=basePath%>js/bootstrap.min.js"></script>
 	
 <link rel="stylesheet" href="<%=basePath%>css/style.default.css" type="text/css" />
-<script type="text/javascript" src="<%=basePath%>js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/plugins/jquery.cookie.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/plugins/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/custom/general.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/custom/tables.js"></script>
+
 <link rel="stylesheet" href="<%=basePath%>fonts/roboto.css">
 </head>
 
@@ -45,14 +39,10 @@
                 	<h3>Table with Action</h3>
                 </div><!--contenttitle-->
                 <div class="tableoptions">
-                	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
-                    <select class="radius3">
-                    	<option value="">Show All</option>
-                        <option value="">Rendering Engine</option>
-                        <option value="">Platform</option>
-                    </select> &nbsp;
+                	<button class="deletebutton radius3" title="table2">删除所有</button> &nbsp;
                     <label></label>
-                     <span class="field"><input type="text" name="input1" class="smallinput" placeholder="search for..."/></span><button type="submit" class="radius3">查询</button>
+                     <span class="field"><input type="text" name="input1" class="smallinput" placeholder="search for..." style="height: 30px;"/></span><button type="submit" class="radius3">查询</button>
+                	<button class="radius3" onclick="adds();">添加</button>
                 </div><!--tableoptions-->	
                 <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb table-striped table-hover">
                     <colgroup>
@@ -134,6 +124,11 @@
                         </tr>
                     </tbody>
                 </table>
+        <script type="text/javascript">
+        	function adds(){
+        		window.location.href="add";
+        	}
+        </script>
 </body>
 </html>
 

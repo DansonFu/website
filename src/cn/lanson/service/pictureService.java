@@ -5,53 +5,53 @@ import java.util.List;
 import cn.lanson.pojo.Picture;
 
 /**
- * 业务层
+ * 涓氬姟灞�
  *
  * @author Danson
- * @time 2017年6月29日上午11:02:31
+ * @time 2017骞�6鏈�29鏃ヤ笂鍗�11:02:31
  *
  */
 public interface pictureService {
 
     /**
-     * 保存图片方法
+     * 淇濆瓨鍥剧墖鏂规硶
      * 
      * @author Danson
-     * @time 2017年6月29日上午11:11:18
+     * @time 2017骞�6鏈�29鏃ヤ笂鍗�11:11:18
      * @param picture
      */
     public void insertPic(Picture picture);
 
     /**
-     * 根据id修改图片
+     * 鏍规嵁id淇敼鍥剧墖
      * 
      * @author Danson
-     * @time 2017年6月29日上午11:08:56
+     * @time 2017骞�6鏈�29鏃ヤ笂鍗�11:08:56
      */
     public void updateById(Picture picture);
 
     /**
-     * 根据id删除图片
+     * 鏍规嵁id鍒犻櫎鍥剧墖
      * 
      * @author Danson
-     * @time 2017年6月29日上午11:09:42
+     * @time 2017骞�6鏈�29鏃ヤ笂鍗�11:09:42
      */
     public void deleteById(int id);
 
     /**
-     * 查询所有的图片
+     * 鏌ヨ鎵�鏈夌殑鍥剧墖
      * 
      * @author Danson
-     * @time 2017年6月29日上午11:11:37
+     * @time 2017骞�6鏈�29鏃ヤ笂鍗�11:11:37
      * @return
      */
     public List<Picture> findAll();
 
     /**
-     * 根据id查询一张图片
+     * 鏍规嵁id鏌ヨ涓�寮犲浘鐗�
      * 
      * @author Danson
-     * @time 2017年6月29日上午11:11:42
+     * @time 2017骞�6鏈�29鏃ヤ笂鍗�11:11:42
      * @param id
      * @return
      */
