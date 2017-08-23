@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.lanson.dao.PicListMapper" >
+  <resultMap id="BaseResultMap" type="cn.lanson.pojo.PicList" >
+    <id column="pic_list_id" property="picListId" jdbcType="INTEGER" />
+    <result column="pic_list_name" property="picListName" jdbcType="VARCHAR" />
+    <result column="cover_pic" property="coverPic" jdbcType="VARCHAR" />
+    <result column="describe" property="describe" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    pic_list_id, pic_list_name, cover_pic, describe
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.lanson.pojo.PicListExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from pic_list
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from pic_list
+    where pic_list_id = #{picListId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from pic_list
+    where pic_list_id = #{picListId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.lanson.pojo.PicListExample" >
+    delete from pic_list
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.lanson.pojo.PicList" >
+    insert into pic_list (pic_list_id, pic_list_name, cover_pic, 
+      describe)
+    values (#{picListId,jdbcType=INTEGER}, #{picListName,jdbcType=VARCHAR}, #{coverPic,jdbcType=VARCHAR}, 
+      #{describe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.lanson.pojo.PicList" >
+    insert into pic_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="picListId != null" >
+        pic_list_id,
+      </if>
+      <if test="picListName != null" >
+        pic_list_name,
+      </if>
+      <if test="coverPic != null" >
+        cover_pic,
+      </if>
+      <if test="describe != null" >
+        describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="picListId != null" >
+        #{picListId,jdbcType=INTEGER},
+      </if>
+      <if test="picListName != null" >
+        #{picListName,jdbcType=VARCHAR},
+      </if>
+      <if test="coverPic != null" >
+        #{coverPic,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null" >
+        #{describe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.lanson.pojo.PicListExample" resultType="java.lang.Integer" >
+    select count(*) from pic_list
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update pic_list
+    <set >
+      <if test="record.picListId != null" >
+        pic_list_id = #{record.picListId,jdbcType=INTEGER},
+      </if>
+      <if test="record.picListName != null" >
+        pic_list_name = #{record.picListName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coverPic != null" >
+        cover_pic = #{record.coverPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.describe != null" >
+        describe = #{record.describe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update pic_list
+    set pic_list_id = #{record.picListId,jdbcType=INTEGER},
+      pic_list_name = #{record.picListName,jdbcType=VARCHAR},
+      cover_pic = #{record.coverPic,jdbcType=VARCHAR},
+      describe = #{record.describe,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.lanson.pojo.PicList" >
+    update pic_list
+    <set >
+      <if test="picListName != null" >
+        pic_list_name = #{picListName,jdbcType=VARCHAR},
+      </if>
+      <if test="coverPic != null" >
+        cover_pic = #{coverPic,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null" >
+        describe = #{describe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pic_list_id = #{picListId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.lanson.pojo.PicList" >
+    update pic_list
+    set pic_list_name = #{picListName,jdbcType=VARCHAR},
+      cover_pic = #{coverPic,jdbcType=VARCHAR},
+      describe = #{describe,jdbcType=VARCHAR}
+    where pic_list_id = #{picListId,jdbcType=INTEGER}
+  </update>
+</mapper>

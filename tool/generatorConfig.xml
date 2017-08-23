@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 	<classPathEntry
-            location="/website/tool/mysql-connector-java-5.1.12.jar"/>
+            location="tool/mysql-connector-java-5.1.12.jar"/>
     <context id="my" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="false"/>
@@ -22,31 +22,35 @@
 		</javaTypeResolver>
 
 		<javaModelGenerator targetPackage="cn.lanson.pojo"
-			targetProject="website/src">
+			targetProject="src">
 			<property name="enableSubPackages" value="false" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<sqlMapGenerator targetPackage="cn.lanson.mapper"
-			targetProject="website/src">
+			targetProject="src">
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="cn.lanson.dao" targetProject="website/src">
+			targetPackage="cn.lanson.dao" targetProject="src">
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		
-		<table tableName="picture" domainObjectName="Picture"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <!--<columnRenamingRule searchString="^D_"
-                                replaceString=""/>-->
+		<table tableName="picture" domainObjectName="Picture">
+               <property name="useActualColumnNames" value="false" />
         </table>
- 		
- 		
-		 
+        <table tableName="user" domainObjectName="User">
+        	<property name="useActualColumnNames" value="false" />
+        </table>
+        <table tableName="customer" domainObjectName="Customer">
+        <property name="useActualColumnNames" value="false" />
+        </table>
+        <table tableName="pic_list" domainObjectName="PicList">
+        <property name="useActualColumnNames" value="false" />
+        </table>
+        <table tableName="pic_connection" domainObjectName="PicConnection">
+        <property name="useActualColumnNames" value="false" />
+        </table>
 	</context>
-
 </generatorConfiguration>

@@ -51,23 +51,21 @@ public class pictureController {
 
     @RequestMapping(value = "/addPic", method = { RequestMethod.POST })
     public void addPic(HttpServletRequest request) {
-        String name = request.getParameter("name");
         String pic = request.getParameter("pic");
         Picture picture = new Picture();
-        picture.setQiniukey(pic);
-        picture.setCreatetime(new Date());
-        picture.setUpdatetime(new Date());
+        picture.setQiniu(pic);
+        picture.setCreateTime(new Date());
+        picture.setUpdateTime(new Date());
         pictureService.insertPic(picture);
     }
 
     @RequestMapping(value = "/editPic", method = { RequestMethod.POST })
     public void editPic(HttpServletRequest request) {
-        String name = request.getParameter("name");
         String pic = request.getParameter("pic");
         Picture picture = new Picture();
-        picture.setQiniukey(pic);
-        picture.setCreatetime(new Date());
-        picture.setUpdatetime(new Date());
+        picture.setQiniu(pic);
+        picture.setCreateTime(new Date());
+        picture.setUpdateTime(new Date());
         pictureService.insertPic(picture);
     }
 
