@@ -34,15 +34,15 @@ public class pictureServiceImpl implements pictureService {
     }
 
     @Override
-    public List<Picture> findAll() {
-        // TODO Auto-generated method stub
-        return pictureMapper.findAll();
-    }
-
-    @Override
     public Picture findById(int id) {
 
         return pictureMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<Picture> findAll() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }
