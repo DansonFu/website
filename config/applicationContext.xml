@@ -15,6 +15,19 @@
     <!-- 自动扫描 -->    
     <context:component-scan base-package="cn.lanson" />    
         
+    <!--url拦截器，对指定的Url进行拦截，判断Session中是否存在用户信息，防止用户通过直接输入url的方式越级访问 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <mvc:exclude-mapping path="login.jsp"/><!--排除拦截页面-->
+            <bean class="cn.lanson.intercptor.UserLoginInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>   
+    <!-- 配置拦截的jsp -->
+    <!-- <mvc:mapping path="/admin/**"/> -->
+    <!-- 配置不拦截的jsp -->
+    <!-- <mvc:exclude-mapping path="/admin/login"/>   -->
+        
     <!-- 导入mybatis配置 -->    
     <import resource="spring-mybatis.xml"/> 
 

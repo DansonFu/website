@@ -19,7 +19,7 @@ import cn.lanson.service.pictureService;
 
 @Controller
 @Scope(value = "prototype")
-@RequestMapping("/picture")
+@RequestMapping
 public class pictureController {
 
     @Value("${AccessKey}")
