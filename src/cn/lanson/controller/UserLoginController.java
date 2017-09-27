@@ -15,4 +15,20 @@ public class UserLoginController {
 
     }
 
+    @RequestMapping("/regist")
+    public ModelAndView regist() {
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("regist");
+        return mav;
+    }
+
+    @RequestMapping("/regist")
+    public ModelAndView registEnd() {
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("login");
+        return mav;
+    }
+
 }
